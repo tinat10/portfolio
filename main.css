@@ -1,0 +1,405 @@
+body, html, div, p, ul, li, a, img, form, input, textarea {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+	font-family: "Merriweather", Georgia, serif;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-weight: 900;
+	line-height: 1.5;
+	letter-spacing: 0.075em;
+	text-transform: uppercase;
+	margin: 0 0 1rem 0;
+}
+
+body {
+    background-color: #333; /* Dark background */
+	font-family: "Merriweather", Georgia, serif;
+    line-height: 1.6;
+    color: #ccc; /* Light text color */
+}
+
+#wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+#header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#header h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #eee; /* Light header text color */
+}
+
+#header .logo {
+    font-size: 24px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* Intro styles */
+#intro {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#intro h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #fff; /* White intro text */
+}
+
+#intro p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ddd; /* Light intro text */
+}
+
+/* Navigation styles */
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333; /* Example background color */
+    color: white; /* Example text color */
+}
+
+#nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#nav .links {
+    margin-right: auto; /* Push icons to the right */
+}
+
+#nav .icons {
+    margin-left: auto; /* Push icons to the right */
+}
+
+#nav a {
+    color: inherit;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+#nav .linkedIn img {
+	width: 50px; /* Adjust size as needed */
+    height: auto;
+}
+
+#nav .git img {
+	width: 30px; /* Adjust size as needed */
+    height: auto;
+}
+
+#nav a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Main section styles */
+#main {
+    padding: 50px 0;
+}
+
+.post {
+    margin-bottom: 50px;
+    background-color: #444; /* Darker background for posts */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.post .major h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #eee; /* Light post header text */
+}
+
+.post .experience {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.post .experience .logo {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.post .experience .details {
+    flex: 1 1 auto;
+}
+
+.post .experience .position {
+    font-weight: bold;
+    color: #ccc;
+}
+
+.post .experience .company {
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.post .experience .dates {
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.post .experience .responsibilities {
+    margin-top: 10px;
+    color: #ddd; /* Light post text */
+}
+
+/* Footer styles */
+#footer {
+    background-color: #444; /* Dark footer background */
+    color: #ccc; /* Light footer text color */
+    padding: 50px 0;
+}
+
+#footer h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #eee; /* Light footer header text */
+}
+
+#footer p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ddd; /* Light footer text */
+}
+
+#footer .icons.alt li {
+    margin-left: 10px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    #header h2 {
+        font-size: 30px;
+    }
+    
+    #intro h1 {
+        font-size: 36px;
+    }
+    
+    #intro p {
+        font-size: 16px;
+    }
+    
+    #nav .links li a {
+        font-size: 16px;
+    }
+    
+    .post .major h2 {
+        font-size: 24px;
+    }
+    
+    #footer h3 {
+        font-size: 20px;
+    }
+    
+    #footer p {
+        font-size: 16px;
+    }
+	#header {
+		background-color: #333; /* Dark background */
+		color: #eee; /* Light text color */
+		padding: 10px 20px;
+		position: fixed;
+		width: 100%;
+		z-index: 1000; /* Ensures it's above other content */
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	#header .logo {
+		font-size: 24px;
+		color: #ccc;
+		text-decoration: none;
+		margin-top: 5px; /* Adjust as needed */
+	}
+	
+	#nav {
+		text-align: right;
+		align-items: right;
+	}
+
+	.navlinks {
+		text-align: right;
+		align-items: right;
+		align-items: flex-end;
+
+	}
+	
+	#nav .navlinks {
+		align-items: flex-end;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#nav .navlinks li {
+		display: inline-block;
+		margin-left: 15px;
+	}
+	
+	#nav .navlinks li:first-child {
+		margin-left: 0;
+	}
+	
+	#nav.navlinks li a {
+		color: #ccc;
+		text-decoration: none;
+		font-size: 16px;
+		transition: color 0.3s ease;
+	}
+	
+	#nav.navlinks li a:hover {
+		color: #fff; /* Hover color */
+	}
+	
+	#nav.navlinks li a i {
+		margin-right: 5px; /* Space between icon and text */
+	}
+		
+	/* Footer styling */
+	footer {
+		background-color: #333;
+		color: #fff;
+		padding: 2em 0;
+		text-align: center;
+	}
+
+	footer h2 {
+		font-size: 1.5em;
+		margin-bottom: 0.5em;
+	}
+
+	footer p {
+		margin-bottom: 1em;
+	}
+
+	footer form {
+		margin-bottom: 2em;
+	}
+
+	footer .fields {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	footer .field {
+		flex: 0 0 30%;
+		margin-bottom: 1em;
+	}
+
+	footer label {
+		display: block;
+		font-weight: bold;
+		margin-bottom: 0.5em;
+	}
+
+	footer input[type="text"],
+	footer textarea {
+		width: 100%;
+		padding: 0.5em;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+
+	footer textarea {
+		resize: vertical;
+	}
+
+	footer ul.actions {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	footer ul.actions li {
+		margin-top: 1em;
+	}
+
+	footer ul.actions input[type="submit"] {
+		background-color: #4CAF50;
+		color: #fff;
+		padding: 0.8em 1.2em;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	footer ul.actions input[type="submit"]:hover {
+		background-color: #45a049;
+	}
+
+	footer .split {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	footer .split section {
+		flex: 0 0 30%;
+		margin-bottom: 1em;
+		text-align: left;
+	}
+
+	footer .split h3 {
+		font-size: 1.2em;
+		margin-bottom: 0.5em;
+	}
+
+	footer .split p,
+	footer .split ul {
+		margin-bottom: 0.5em;
+	}
+
+	footer .split ul.icons {
+		padding: 0;
+	}
+
+	footer .split ul.icons.alt li {
+		margin-right: 1em;
+	}
+
+	footer .split ul.icons.alt li:last-child {
+		margin-right: 0;
+	}
+
+	footer .split ul.icons.alt li a {
+		display: inline-block;
+		font-size: 1.5em;
+		color: #fff;
+		transition: color 0.3s ease;
+	}
+
+	footer .split ul.icons.alt li a:hover {
+		color: #aaa;
+	}
+
+}
