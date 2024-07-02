@@ -7,15 +7,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="path/to/your/react-app.css">
 
 	</head>
+
+	<div id="root"></div>
+  	<script src="static/react-app.js"></script>
 
 	<nav id="nav">
 		<ul class="links">
 			<li><a href="index.html">Home</a></li>
 			<li><a href="#working_experience">Experience</a></li>
-			<li><a href="profdev.html">Development</a></li>
-			<li><a href="volunteer.html">Volunteer</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#profdev">Development</a></li>
+			<li><a href="#volunteer">Volunteer</a></li>
+			<li><a href="#certifications">Certifications</a></li>
+
 		</ul>
 		<ul class="icons">
 			<li><a class="linkedIn" href="https://www.linkedin.com/in/tina-thai1"><img src="images/linkedin.png" alt="LinkedIn Logo"></a></li>
@@ -107,70 +114,317 @@
 
 				</article>
 
+
 				<article class="post featured">
-					<header class="major">
-						<h2><a>Certifications</a></h2>
+					<header class="major" id="projects">
+						<h2><a>Projects</a></h2>
 						<p></p>
 					</header>
-				<!-- Certifications -->
-					<div class="experience">
-						<div class="logo">
-							<!-- Replace with appropriate logos or icons -->
-							<img src="images/bloomberg.jpeg" style="width: 100px; height: auto" alt="Bloomberg Logo">
-						</div>
-						<div class="details">
-							<div class="position">Bloomberg Market Concepts (2024)</div>
-							<div class="company">Bloomberg LP</div>
-							<div class="dates">Completed in 2024</div>
-							<div class="responsibilities">
-								<ul style="font-size: smaller;">
-									<li>Developed fundamental understanding of financial markets and key economic concepts.</li>
-									<li>Learned practical skills in Bloomberg terminal usage and financial data analysis.</li>
-									<!-- Add more details or achievements as necessary -->
-								</ul>
+			
+					<div class="post">
+						<div class="experience">
+							<div class="logo">
+								<img src="images/supermarket.png" style="width: 100px; height: auto;"  alt="Supermarket Logo">
+							</div>
+							<div class="details">
+								<div class="position">Supermarket Website</div>
+								<div class="company">
+									<a href="https://github.com/tinat10/SupermarketWebsite" class="github-btn" target="_blank">GitHub Repository</a>
+								</div>
+								<div class="responsibilities">
+									<ul style="font-size: smaller; margin-bottom: -40px;">
+										<li>Produced a fully functional supermarket website using SQL, PHP, HTML, JavaScript, and CSS.</li>
+										<li>Implemented a secure database system to manage user accounts and store information.</li>
+										<li>Developed role-based access control using SQL to manage permissions, allowing admins to grant and revoke access.</li>
+										<li>Designed an intuitive user interface for browsing products, adding items to a cart, and completing purchases.</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
+			
+					<div class="post">
+						<div class="experience">
+							<div class="logo">
+								<img src="images/amazon.jpg" style="width: 100px; height: auto;" alt="Amazon Logo">
+							</div>
+							<div class="details">
+								<div class="position">Amazon Web Scraper Project</div>
+								<div class="company">
+									<a href="https://github.com/your_username/amazon_scraper_project" class="github-btn" target="_blank">GitHub Repository</a>
+								</div>
+								<div class="responsibilities">
+									<ul style="font-size: smaller;margin-bottom: -100px;">
+										<li>Developed a Python script utilizing BeautifulSoup for web scraping live, daily pricing from Amazon product pages.</li>
+										<li>Utilized pandas and matplotlib for visualizing price trends, ensuring tracking of price fluctuations over time.</li>
+										<li>Implemented scheduling with datetime libraries to automate daily scraping, ensuring up-to-date data collection.</li>
+										<li>Configured an email notification system using smtplib to inform users promptly of significant price drops, enhancing user engagement.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div><br><br>
+			
+					<div class="post">
+						<div class="experience">
+							<div class="logo">
+								<img src="images/weather.png" style="width: 100px; height: auto;" alt="Weather App Logo">
+							</div>
+							<div class="details">
+								<div class="position">Weather API Android App</div>
+								<div class="company">
+								</div>
+								<div class="responsibilities">
+									<ul style="font-size: smaller; ">
+										<li>Developed a weather forecasting Android app using Android Studio, Java, XML, and external APIs.</li>
+										<li>Engineered a fully responsive UI in XML for a seamless experience across diverse devices.</li>
+										<li>Leveraged Java for backend processing, integrating OpenWeatherMap API to retrieve and display real-time weather data for user-selected locations.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+			
+					<div class="post">
+						<div class="experience">
+							<div class="logo">
+								<img src="images/unity.png" style="width: 100px; height: auto;" alt="Fruit Ninja Logo">
+							</div>
+							<div class="details">
+								<div class="position">Fruit Ninja Game</div>
+								<div class="company">
+									<a href="https://github.com/tinat10/Fruit-Ninja" class="github-btn" target="_blank">GitHub Repository</a>
+								</div>
+								<div class="responsibilities">
+									<ul style="font-size: smaller;margin-bottom: -100px;">
+										<li>Delivered an engaging VR fruit-slicing simulation in Unity using C# for game mechanics and interfaces.</li>
+										<li>Implemented a precision fruit-slicing mechanic using SteamVR controller inputs and Unity’s physics engine.</li>
+										<li>Utilized various Unity assets, including the Fruit asset bundle from the asset store, to build the VR environment.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+			
+				</article>
 
-					<div class="experience">
-						<div class="logo">
-							<!-- Replace with appropriate logos or icons -->
-							<img src="images/bloomberg.jpeg" style="width: 100px; height: auto" alt="Bloomberg Logo">
-						</div>
-						<div class="details">
-							<div class="position">Bloomberg Finance Fundamentals (2024)</div>
-							<div class="company">Bloomberg LP</div>
-							<div class="dates">Completed in 2024</div>
-							<div class="responsibilities">
-								<ul style="font-size: smaller;">
-									<li>Gained in-depth knowledge of finance essentials, including financial statements, valuation techniques, and risk management.</li>
-									<li>Practiced applying financial theories and concepts using Bloomberg tools and resources.</li>
-									<!-- Add more details or achievements as necessary -->
-								</ul>
-							</div>
-						</div>
-					</div>
+				
+			<article class="post featured">
+				<header class="major">
+					<h2><a id="profdev">Professional Development</a></h2>
+					<p></p>
+				</header>
 
-					<div class="experience">
-						<div class="logo">
-							<!-- Replace with appropriate logos or icons -->
-							<img src="images/matlab.png" style="width: 100px; height: auto" alt="MathWorks MATLAB Logo">
-						</div>
-						<div class="details">
-							<div class="position">MathWorks MATLAB Onramp (2024)</div>
-							<div class="company">MathWorks Inc.</div>
-							<div class="dates">Completed in 2024</div>
-							<div class="responsibilities">
-								<ul style="font-size: smaller;">
-									<li>Learned MATLAB fundamentals, including syntax, data types, and basic programming techniques.</li>
-									<li>Acquired skills in scientific computing and data analysis using MATLAB.</li>
-									<!-- Add more details or achievements as necessary -->
-								</ul>
-							</div>
+				<div class="experience">
+					<div class="logo">
+						<img src="images/visa.png" style="width: 100px; height: auto;"alt="Visa Logo">
+					</div>
+					<div class="details">
+						<div class="position">Student Partipant</div>
+						<div class="company">Visa Upskill Tech Virtual Learning Series</div>
+						<div class="dates">June. 2024 - Present</div>
+						<div class="responsibilities">
+							<ul style="font-size: smaller;">
+								<li>A virtual learning series designed to equip you with the necessary tools and skills to ace your interviews and level up your coding skills.</li>
+								
+							</ul>
 						</div>
 					</div>
+				</div>
+
+				<div class="experience">
+					<div class="logo">
+						<img src="images/bloomberg.jpeg" style="width: 100px; height: auto;"alt="Bloomberg Logo">
+					</div>
+					<div class="details">
+						<div class="position">Partipant</div>
+						<div class="company">Bloomberg Women In Data Forum</div>
+						<div class="dates">March. 2024 - Present</div>
+						<div class="responsibilities">
+							<ul style="font-size: smaller;">
+								<li>Bloomberg is hosting an exclusive program offering participants a firsthand glimpse into their dynamic work environment and insights into roles within Global Data at their Princeton headquarters.</li>
+								<li>Attendees will benefit from resume refinement, interview preparation, and networking opportunities with Bloomberg employees and recruitment professionals.</li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="experience">
+					<div class="logo">
+						<img src="images/codepath.png" style = "width: 100px; height: auto" alt="Codepath Logo">
+					</div>
+					<div class="details">
+						<div class="position">Student Partipant</div>
+						<div class="company">CodePath Technical Interview Prep Program</div>
+						<div class="dates">June 2024 - August 2024</div>
+						<div class="responsibilities">
+							<ul style="font-size: smaller;">
+								<li>The TIP program equips students with essential skills to excel in technical interviews, providing hands-on experience with real-world industry challenges.</li> 
+								<li>Through comprehensive courses and resources from the CodePath Career Center, including mentorship, interview practice, and insights from senior engineers, students are prepared to tackle complex algorithmic problems and succeed in interviews at leading companies.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="experience">
+					<div class="logo">
+						<img src="images/bofa.png" style="width: 100px; height: auto;"alt="Bloomberg Logo">
+					</div>
+					<div class="details">
+						<div class="position">Partipant</div>
+						<div class="company">Bank of America Early Insights Forum</div>
+						<div class="dates">Jan. 2024</div>
+						<div class="responsibilities">
+							<ul style="font-size: smaller;">
+								<li>Participants in Bank of America's virtual experience will engage with Global Technology leaders, attend professional skills workshops, and explore topics like AI, Information Security, Agile Methodology, and Innovation, with a focus on career growth through development sessions.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</article>
+
+		
+
+			<article class="post featured">
+				<header class="major">
+					<h2><a id="volunteer">Volunteer Experience</a></h2>
+					<p></p>
+				</header>
+			
+				<!-- Volunteer Experience 1: Public Relations Chair, Women in Computing Society -->
+				<div class="experience">
+					<div class="logo">
+						<!-- Replace with appropriate logo or image -->
+						<img src="images/wics.png" style="width: 100px; height: auto" alt="Women in Computing Logo">
+					</div>
+					<div class="details">
+						<div class="position">Public Relations Chair, Women in Computing Society</div>
+						<div class="company">Newark, NJ</div>
+						<div class="dates">Dec. 2023 – Present</div>
+						<div class="responsibilities">
+							<ul style="font-size: smaller;">
+								<li>Establish and maintain positive relationships with key stakeholders, including companies, external organizations, students, faculty, and industry professionals.</li>
+								<li>Coordinate and promote a series of successful workshops, seminars, and networking sessions for members.</li>
+								<li>Utilize graphic design software to produce promotional materials that publicize upcoming meetings and events.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			
+				<!-- Volunteer Experience 3: Knit N' Crochet Club -->
+				<div class="experience">
+					<div class="logo">
+						<!-- Replace with appropriate logo or image -->
+						<img src="images/knit.png" style="width: 100px; height: auto" alt="Knit N' Crochet Club Logo">
+					</div>
+					<div class="details">
+						<div class="position">Volunteer, Knit N' Crochet Club</div>
+						<div class="company">Newark, NJ</div>
+						<div class="dates">January 2024 - Present</div>
+						<div class="responsibilities">
+							<ul style="font-size: smaller;">
+								<li>Create crocheted projects to donate to underprivileged communities in the Newark area.</li>
+								<li>Volunteer approximately 15 hours per semester for the knit and crochet club, contributing to its vibrant community.</li>
+								<li>Instruct beginners in foundational knitting and crochet techniques, fostering skill development and enthusiasm among members.</li>
+								<!-- Add more responsibilities or achievements as necessary -->
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Volunteer Experience 2: President, Girls Who Code (GWC) -->
+				<div class="experience">
+					<div class="logo">
+						<img src="images/gwc.png" style="width: 100px; height: auto" alt="Girls Who Code Logo">
+					</div>
+					<div class="details">
+						<div class="position">President, Girls Who Code (GWC)</div>
+						<div class="company">Monmouth Junction, NJ</div>
+						<div class="dates">Sept. 2020 – June 2023</div>
+						<div class="responsibilities">
+							<ul style="font-size: smaller;">
+								<li>Led and managed the GWC chapter, consisting of 100+ students, overseeing all club activities and ensuring successful workshops/events.</li>
+								<li>Organized and executed coding workshops and events to promote computer science education.</li>
+								<li>Demonstrated effective communication and collaboration skills in coordinating with club members, school administration, and external partners to achieve the chapter’s objectives.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			
+			</article>
+
+			<article class="post featured">
+				<header class="major">
+					<h2><a id="certifications">Certifications</a></h2>
+					<p></p>
+				</header>
+			<!-- Certifications -->
+				<div class="experience">
+					<div class="logo">
+						<!-- Replace with appropriate logos or icons -->
+						<img src="images/bloomberg.jpeg" style="width: 100px; height: auto" alt="Bloomberg Logo">
+					</div>
+					<div class="details">
+						<div class="position">Bloomberg Market Concepts (2024)</div>
+						<div class="company">Bloomberg LP</div>
+						<div class="dates">Completed in 2024</div>
+						<div class="responsibilities">
+							<ul style="font-size: smaller;">
+								<li>Developed fundamental understanding of financial markets and key economic concepts.</li>
+								<li>Learned practical skills in Bloomberg terminal usage and financial data analysis.</li>
+								<!-- Add more details or achievements as necessary -->
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="experience">
+					<div class="logo">
+						<!-- Replace with appropriate logos or icons -->
+						<img src="images/bloomberg.jpeg" style="width: 100px; height: auto" alt="Bloomberg Logo">
+					</div>
+					<div class="details">
+						<div class="position">Bloomberg Finance Fundamentals (2024)</div>
+						<div class="company">Bloomberg LP</div>
+						<div class="dates">Completed in 2024</div>
+						<div class="responsibilities">
+							<ul style="font-size: smaller;">
+								<li>Gained in-depth knowledge of finance essentials, including financial statements, valuation techniques, and risk management.</li>
+								<li>Practiced applying financial theories and concepts using Bloomberg tools and resources.</li>
+								<!-- Add more details or achievements as necessary -->
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="experience">
+					<div class="logo">
+						<!-- Replace with appropriate logos or icons -->
+						<img src="images/matlab.png" style="width: 100px; height: auto" alt="MathWorks MATLAB Logo">
+					</div>
+					<div class="details">
+						<div class="position">MathWorks MATLAB Onramp (2024)</div>
+						<div class="company">MathWorks Inc.</div>
+						<div class="dates">Completed in 2024</div>
+						<div class="responsibilities">
+							<ul style="font-size: smaller;">
+								<li>Learned MATLAB fundamentals, including syntax, data types, and basic programming techniques.</li>
+								<li>Acquired skills in scientific computing and data analysis using MATLAB.</li>
+								<!-- Add more details or achievements as necessary -->
+							</ul>
+						</div>
+					</div>
+				</div>
 </article>
-			</div>
+		</div>
+
+			
+			
+
+		
 
 			
 
