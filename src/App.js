@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import ContactForm from './ContactForm'; // Assuming ContactForm.js is in the same directory
+import './App.css'; // Import your global CSS file
+import Portfolio from './components/Portfolio'; // Import your Portfolio component
 
-ReactDOM.render(
-  <React.StrictMode>
-    <ContactForm />
-  </React.StrictMode>,
-  document.getElementById('root')
+function App() {
+  return (
+    <div className="App">
+      {/* Your navigation and other components can be placed here */}
+      <Portfolio />
+    </div>
 );
