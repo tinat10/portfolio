@@ -1,4 +1,6 @@
 {
+  "homepage": "https://tinat10.github.io/portfolio",
+
   "name": "tina-thai-portfolio",
   "version": "1.0.0",
   "private": true,
@@ -11,7 +13,6 @@
     "@emailjs/browser": "^3.11.0",
     "react-icons": "^4.11.0"
   },
-  "homepage": "https://tinat10.github.io/portfolio",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
