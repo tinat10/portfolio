@@ -62,10 +62,9 @@ export const portfolioData = {
       dates: "Jan. 2024 - Present",
       logo: `${process.env.PUBLIC_URL}/images/njit_logo_1.png`,
       responsibilities: [
-        "Conduct engaging and interactive recitation sessions in calculus, linear algebra, statistics, and probability.",
-        "Assist students in rigorous exam preparation and thorough review sessions.",
-        "Provide personalized guidance and strategies to enhance understanding and academic performance.",
-        "Offer valuable insights to optimize learning outcomes and foster student success in mathematics."
+        "Tutor over 200 students across 4 high-demand STEM courses (statistics, linear algebra, and calculus I & II), assessing pre- and post-session metrics demonstrating an average 25% gain in core competencies through individualized review of fundamental principles",
+        "Prepare 100+ students for midterm and final exams over 10 intensive prep sessions, employing guided practice exams, feedback on common errors, and test-taking strategies proven",
+        "Facilitate weekly recitation sessions attended by 40+ students–solving approaches through live whiteboarding of step-by-step solutions and welcoming iterative questioning to solidify understanding of technical concepts"
       ]
     }
   ],
