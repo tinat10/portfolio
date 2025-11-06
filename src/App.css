@@ -1,0 +1,38 @@
+/* App Styles */
+.App {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+/* Smooth transitions for all sections */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .hero-scroll,
+  .filter-buttons,
+  .contact-form {
+    display: none;
+  }
+}
+
