@@ -18,8 +18,8 @@ function App() {
       <Hero />
       <Education />
       <Experience />
-      <Projects />
       <ProfessionalDev />
+      <Projects />
       <Volunteer />
       <Certifications />
       <ContactForm />
