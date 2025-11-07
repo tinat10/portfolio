@@ -11,7 +11,6 @@ export const portfolioData = {
   education: {
     school: "New Jersey Institute of Technology, Albert Dorman Honors College",
     degree: "Bachelor of Science in Computer Science, Minor in Data Analytics",
-    graduation: "Spring 2026",
     gpa: "3.98",
     logo: `${process.env.PUBLIC_URL}/images/njit_logo_1.png`,
     coursework: [

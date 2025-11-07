@@ -25,7 +25,6 @@ const Education = () => {
           <div className="education-details">
             <h3 className="education-school">{portfolioData.education.school}</h3>
             <p className="education-degree">{portfolioData.education.degree}</p>
-            <p className="education-graduation">Expected Graduation: {portfolioData.education.graduation}</p>
             <p className="education-gpa">GPA: <span className="highlight">{portfolioData.education.gpa}</span></p>
             
             <div className="education-info">
