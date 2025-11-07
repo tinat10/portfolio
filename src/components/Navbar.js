@@ -12,7 +12,7 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ['home', 'education', 'experience', 'projects', 'profdev', 'volunteer', 'certifications'];
+      const sections = ['home', 'education', 'experience', 'profdev', 'projects', 'volunteer', 'certifications'];
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -53,11 +53,11 @@ const Navbar = () => {
           <a href="#experience" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }} className={activeSection === 'experience' ? 'active' : ''}>
             Experience
           </a>
-          <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className={activeSection === 'projects' ? 'active' : ''}>
-            Projects
-          </a>
           <a href="#profdev" onClick={(e) => { e.preventDefault(); scrollToSection('profdev'); }} className={activeSection === 'profdev' ? 'active' : ''}>
             Development
+          </a>
+          <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className={activeSection === 'projects' ? 'active' : ''}>
+            Projects
           </a>
           <a href="#volunteer" onClick={(e) => { e.preventDefault(); scrollToSection('volunteer'); }} className={activeSection === 'volunteer' ? 'active' : ''}>
             Volunteer
