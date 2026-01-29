@@ -1,83 +1,87 @@
-import React, { useState, useEffect } from 'react';
-import { FaLinkedin, FaGithub, FaBars, FaTimes } from 'react-icons/fa';
+import React, { useMemo } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { FaChevronLeft, FaChevronRight, FaGithub, FaLinkedin } from 'react-icons/fa';
 import './styles/Navbar.css';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      
-      // Update active section based on scroll position
-      const sections = ['home', 'education', 'experience', 'profdev', 'projects', 'volunteer', 'certifications'];
-      const scrollPosition = window.scrollY + 100;
+  const pages = useMemo(
+    () => [
+      { path: '/', label: 'Home' },
+      { path: '/education', label: 'Education' },
+      { path: '/work', label: 'Work' },
+      { path: '/development', label: 'Development' },
+      { path: '/projects', label: 'Projects' },
+      { path: '/volunteer', label: 'Volunteer' },
+      { path: '/certifications', label: 'Certifications' },
+    ],
+    []
+  );
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
-        }
-      }
-    };
+  const activePath = location.pathname || '/';
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const goTo = (path) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsMobileMenuOpen(false);
-    }
+  const movePage = (direction) => {
+    const idx = pages.findIndex((p) => p.path === activePath);
+    const safeIdx = idx === -1 ? 0 : idx;
+    const nextIdx = Math.min(pages.length - 1, Math.max(0, safeIdx + direction));
+    const next = pages[nextIdx];
+    if (next) goTo(next.path);
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className="navbar scrolled">
       <div className="nav-container">
-        <div className="nav-logo" onClick={() => scrollToSection('home')}>
-          <span>Tina Thai</span>
-        </div>
-        
-        <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className={activeSection === 'home' ? 'active' : ''}>
-            Home
-          </a>
-          <a href="#education" onClick={(e) => { e.preventDefault(); scrollToSection('education'); }} className={activeSection === 'education' ? 'active' : ''}>
-            Education
-          </a>
-          <a href="#experience" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }} className={activeSection === 'experience' ? 'active' : ''}>
-            Experience
-          </a>
-          <a href="#profdev" onClick={(e) => { e.preventDefault(); scrollToSection('profdev'); }} className={activeSection === 'profdev' ? 'active' : ''}>
-            Development
-          </a>
-          <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className={activeSection === 'projects' ? 'active' : ''}>
-            Projects
-          </a>
-          <a href="#volunteer" onClick={(e) => { e.preventDefault(); scrollToSection('volunteer'); }} className={activeSection === 'volunteer' ? 'active' : ''}>
-            Volunteer
-          </a>
-          <a href="#certifications" onClick={(e) => { e.preventDefault(); scrollToSection('certifications'); }} className={activeSection === 'certifications' ? 'active' : ''}>
-            Certifications
-          </a>
-        </div>
+        <button className="topbar-brand" type="button" onClick={() => goTo('/')} aria-label="Go to home">
+          <span className="brand-mark" aria-hidden="true">
+            <span className="brand-dot" />
+          </span>
+          <span className="brand-text">
+            <span className="brand-name">Tina Thai</span>
+            <span className="brand-subtitle">Computer Science Student</span>
+          </span>
+        </button>
 
-        <div className="nav-social">
-          <a href="https://www.linkedin.com/in/thaitina/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <div className="now-playing">
+          <div className="now-playing-left">
+            <span className="now-playing-label">Now Playing</span>
+            <select
+              className="now-playing-select"
+              value={activePath}
+              onChange={(e) => goTo(e.target.value)}
+              aria-label="Jump to page"
+            >
+              {pages.map((p) => (
+                <option key={p.path} value={p.path}>
+                  {p.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="now-playing-controls" aria-label="Page navigation controls">
+            <button type="button" className="now-btn" onClick={() => movePage(-1)} aria-label="Previous page">
+              <FaChevronLeft />
+            </button>
+            <button type="button" className="now-btn" onClick={() => movePage(1)} aria-label="Next page">
+              <FaChevronRight />
+            </button>
+          </div>
+
+          <div className="now-playing-social" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/thaitina/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <FaLinkedin />
           </a>
           <a href="https://github.com/tinat10" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub />
           </a>
         </div>
-
-        <div className="nav-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </div>
     </nav>

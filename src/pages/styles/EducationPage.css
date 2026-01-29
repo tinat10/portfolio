@@ -1,0 +1,204 @@
+.edu-page {
+  padding-top: 7rem;
+}
+
+.edu-header {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 2.25rem;
+}
+
+.edu-title {
+  margin: 0;
+  font-size: 4.4rem;
+  line-height: 1;
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+}
+
+.edu-subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  max-width: 56ch;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.edu-card {
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 250, 245, 0.82);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(210, 157, 145, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 88% 70%, rgba(193, 163, 122, 0.14) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.edu-cardTop {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.edu-logoWrap {
+  width: 86px;
+  height: 86px;
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 250, 245, 0.92);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 26px rgba(75, 59, 48, 0.10);
+  padding: 0.55rem;
+}
+
+.edu-school {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--text-main);
+}
+
+.edu-degree {
+  margin: 0.35rem 0 0.6rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.edu-gpa {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.edu-gpaLabel {
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.edu-gpaValue {
+  font-weight: 800;
+  color: var(--text-main);
+  border-bottom: 2px solid rgba(210, 157, 145, 0.55);
+}
+
+.edu-highlights {
+  margin-top: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.edu-highlightsTitle {
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(75, 59, 48, 0.55);
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.edu-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.edu-badge {
+  border: 1px solid var(--border-soft);
+  background: rgba(249, 236, 228, 0.75);
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem;
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.edu-panel {
+  border: 1px solid rgba(75, 59, 48, 0.16);
+  border-radius: 18px;
+  background: rgba(253, 247, 242, 0.75);
+  box-shadow: 0 12px 26px rgba(75, 59, 48, 0.08);
+  padding: 1.5rem;
+}
+
+.edu-panelHeader {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.edu-panelTitle {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.edu-panelRule {
+  height: 1px;
+  width: 100%;
+  background: rgba(75, 59, 48, 0.16);
+}
+
+.edu-coursework {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.edu-course {
+  display: grid;
+  grid-template-columns: 10px 1fr;
+  gap: 0.6rem;
+  align-items: start;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.edu-courseDot {
+  width: 10px;
+  height: 10px;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+}
+
+@media screen and (max-width: 980px) {
+  .edu-grid {
+    grid-template-columns: 1fr;
+  }
+  .edu-title {
+    font-size: 3.4rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .edu-title {
+    font-size: 2.8rem;
+  }
+  .edu-coursework {
+    grid-template-columns: 1fr;
+  }
+}
+

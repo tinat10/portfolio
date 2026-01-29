@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaArrowDown, FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaArrowDown, FaExternalLinkAlt } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolioData';
 import './styles/Hero.css';
 
 const Hero = () => {
+  const [activeSpotlightId, setActiveSpotlightId] = useState(null);
+
+  const spotlights = useMemo(() => {
+    // Use the first 3 projects as "cover" tiles.
+    return (portfolioData.projects || []).slice(0, 3);
+  }, []);
+
   const scrollToNext = () => {
     const element = document.getElementById('education');
     if (element) {
@@ -13,112 +20,141 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="hero">
-      <div className="hero-container">
-        <motion.div
-          className="hero-content"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+    <section id="home" className="cover">
+      <div className="cover-inner">
+        <div className="cover-grid">
           <motion.div
-            className="hero-badge"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            👋 Welcome
-          </motion.div>
-          <motion.h1
-            className="hero-name"
-            initial={{ opacity: 0, y: -20 }}
+            className="cover-left"
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.6 }}
           >
-            {portfolioData.personal.name}
-          </motion.h1>
-          <motion.p
-            className="hero-title"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            {portfolioData.personal.title}
-          </motion.p>
-          <motion.p
-            className="hero-bio"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            dangerouslySetInnerHTML={{ __html: portfolioData.personal.bio }}
-          />
-          <motion.div
-            className="hero-social"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-          >
-            <a href={portfolioData.personal.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">
-              <FaLinkedin />
-            </a>
-            <a href={portfolioData.personal.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-link">
-              <FaGithub />
-            </a>
-            <a href={`mailto:${portfolioData.personal.email}`} aria-label="Email" className="social-link">
-              <FaEnvelope />
-            </a>
-          </motion.div>
-        </motion.div>
-        
-        <motion.div
-          className="hero-image-wrapper"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <div className="hero-illustration">
-            <div className="illustration-container">
-              {/* Floating code brackets */}
-              <div className="code-bracket bracket-left">{'{'}</div>
-              <div className="code-bracket bracket-right">{'}'}</div>
-              
-              {/* Central icon - laptop/computer */}
-              <div className="laptop-icon">
-                <svg viewBox="0 0 100 100" className="laptop-svg">
-                  <rect x="10" y="25" width="80" height="50" rx="3" fill="#3b82f6" opacity="0.2"/>
-                  <rect x="15" y="30" width="70" height="40" rx="2" fill="#2563eb"/>
-                  <rect x="20" y="35" width="60" height="30" rx="2" fill="#1e40af"/>
-                  <line x1="25" y1="45" x2="75" y2="45" stroke="#dbeafe" strokeWidth="2"/>
-                  <line x1="25" y1="55" x2="60" y2="55" stroke="#dbeafe" strokeWidth="2"/>
-                  <rect x="25" y="75" width="50" height="5" rx="2" fill="#3b82f6" opacity="0.3"/>
-                </svg>
-              </div>
-              
-              {/* Floating dots */}
-              <div className="floating-dot dot-1"></div>
-              <div className="floating-dot dot-2"></div>
-              <div className="floating-dot dot-3"></div>
-              <div className="floating-dot dot-4"></div>
-              <div className="floating-dot dot-5"></div>
-              
-              {/* Decorative shapes */}
-              <div className="shape shape-1"></div>
-              <div className="shape shape-2"></div>
-              <div className="shape shape-3"></div>
+            <div className="desk-vignette" aria-hidden="true">
+              <div className="desk-plant" />
+              <div className="desk-lamp" />
+              <div className="desk-books" />
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="cover-center"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+          >
+            <h1 className="cover-headline">
+              software engineer &<br />
+              vintage-tech lover.
+            </h1>
+            <p
+              className="cover-subcopy"
+              dangerouslySetInnerHTML={{ __html: portfolioData.personal.bio }}
+            />
+
+            <div className="cover-tags" aria-label="Focus areas">
+              <span className="cover-tag">software engineering</span>
+              <span className="cover-tag">data analytics</span>
+              <span className="cover-tag">research</span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="cover-right"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.16 }}
+          >
+            <p className="cover-now">
+              Currently working on <span className="cover-now-highlight">new builds</span> and refining this portfolio.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="cover-featured">
+          {spotlights.map((p, idx) => (
+            <motion.button
+              key={p.id}
+              type="button"
+              className="album-tile"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-120px" }}
+              transition={{ duration: 0.5, delay: 0.1 + idx * 0.08 }}
+              whileHover={{ y: -8 }}
+              onClick={() => setActiveSpotlightId(p.id)}
+              aria-label={`Open ${p.title} spotlight`}
+            >
+              <div className="album-cover">
+                <img className="album-image" src={p.logo} alt="" />
+                <div className="album-sheen" aria-hidden="true" />
+                <div className="album-meta">
+                  <div className="album-title">{p.title}</div>
+                  <div className="album-cta">
+                    View <FaExternalLinkAlt />
+                  </div>
+                </div>
+              </div>
+            </motion.button>
+          ))}
+        </div>
       </div>
-      
-      <motion.div
-        className="hero-scroll"
+
+      {/* Simple spotlight modal (classy + optional) */}
+      {activeSpotlightId != null && (
+        <div
+          className="spotlight-backdrop"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setActiveSpotlightId(null)}
+        >
+          <div className="spotlight-modal" onClick={(e) => e.stopPropagation()}>
+            {(() => {
+              const p = spotlights.find((x) => x.id === activeSpotlightId);
+              if (!p) return null;
+              return (
+                <>
+                  <div className="spotlight-header">
+                    <div>
+                      <div className="spotlight-kicker">Project spotlight</div>
+                      <h3 className="spotlight-title">{p.title}</h3>
+                      <p className="spotlight-desc">{p.description}</p>
+                    </div>
+                    <button className="spotlight-close" onClick={() => setActiveSpotlightId(null)} aria-label="Close">
+                      ✕
+                    </button>
+                  </div>
+                  <div className="spotlight-body">
+                    <ul className="spotlight-list">
+                      {(p.details || []).slice(0, 4).map((d, i) => (
+                        <li key={i}>{d}</li>
+                      ))}
+                    </ul>
+                    <div className="spotlight-links">
+                      {p.github && (
+                        <a className="spotlight-link" href={p.github} target="_blank" rel="noopener noreferrer">
+                          GitHub <FaExternalLinkAlt />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </>
+              );
+            })()}
+          </div>
+        </div>
+      )}
+
+      <motion.button
+        type="button"
+        className="cover-scroll"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.1 }}
+        transition={{ duration: 0.6, delay: 0.25 }}
         onClick={scrollToNext}
+        aria-label="Scroll to next section"
       >
         <FaArrowDown />
-      </motion.div>
+      </motion.button>
     </section>
   );
 };

@@ -44,7 +44,7 @@ export const portfolioData = {
       position: "Student Researcher",
       company: "Cornell University",
       location: "Ithaca, NY",
-      dates: "June 2024 - Present",
+      dates: "June 2024 - July 2024",
       logo: `${process.env.PUBLIC_URL}/images/cornell.png`,
       responsibilities: [
         "Explored the existing constraints of multimodal AI LLaVA (7B parameter model) in text and image-to-text capabilities to use as benchmarks and implemented methods to circumvent them for applications of citizen science and aiding the visually impaired.",

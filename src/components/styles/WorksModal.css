@@ -1,0 +1,60 @@
+.works-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(75, 59, 48, 0.35);
+  backdrop-filter: blur(4px);
+  z-index: 2200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.works-modal {
+  width: min(880px, 100%);
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  box-shadow: 0 28px 70px rgba(75, 59, 48, 0.28);
+  padding: 1.25rem 1.25rem 1.1rem;
+  outline: none;
+}
+
+.works-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.works-modal-kicker {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.works-modal-title {
+  margin: 0.2rem 0 0;
+  color: var(--text-main);
+}
+
+.works-modal-close {
+  border: 1px solid var(--border-soft);
+  background: rgba(249, 236, 228, 0.6);
+  border-radius: 10px;
+  padding: 0.35rem 0.55rem;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.works-modal-close:hover {
+  background: rgba(249, 236, 228, 0.85);
+}
+
+.works-modal-body {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  color: var(--text-muted);
+}
+

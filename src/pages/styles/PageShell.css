@@ -1,0 +1,20 @@
+.page {
+  min-height: calc(100vh - 90px);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(210, 157, 145, 0.14) 0%, transparent 55%),
+    radial-gradient(circle at 82% 78%, rgba(124, 140, 122, 0.12) 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg-main) 0%, var(--bg-alt) 100%);
+}
+
+.page-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 7rem 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .page-section {
+    padding: 5rem 1.25rem;
+  }
+}
+
