@@ -6,19 +6,35 @@ export const portfolioData = {
     email: "tkt@njit.edu",
     personalEmail: "tinathai05@gmail.com",
     linkedin: "https://www.linkedin.com/in/thaitina/",
-    github: "https://github.com/tinat10"
+    github: "https://github.com/tinat10",
+    hobbies: [
+      "knitting & crochet",
+      "exploring new Thai restaurants in nyc",
+      "sunset photography",
+      "iced coffee (w/ caramel pleaseee) enthusiast",
+      "traveling to new places!"
+    ],
+    randomFacts: [
+      "i can speak Vietnamese, but I am illiterate :/",
+      "i've crocheted over 50 items for charity",
+      "i loveee doing my own nails (but I'm not good at it)",
+      "my go-to study snack are plantain chips",
+      "i love scrapbooking and junk journaling"
+    ]
   },
   education: {
     school: "New Jersey Institute of Technology, Albert Dorman Honors College",
     degree: "Bachelor of Science in Computer Science, Minor in Data Analytics",
-    gpa: "3.98",
+    gpa: "3.97",
     logo: `${process.env.PUBLIC_URL}/images/njit_logo_1.png`,
     coursework: [
       "Data Structures & Algorithms",
       "Linear Algebra",
-      "Data Science",
+      "Data Science & Analytics",
       "Database Design, Management & Applications",
-      "Statistics & Probability"
+      "Statistics & Probability",
+      "Principles of Operating Systems",
+      "Intensive Programming in Linux"
     ],
     honors: [
       "Albert Dorman Honors Scholar Full-Tuition Merit Scholarship (2023-2027)",
@@ -28,6 +44,19 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
+      position: "Software Engineer Intern",
+      company: "Colgate-Palmolive",
+      location: "Piscataway, NJ",
+      dates: "January 2026 – Present",
+      logo: `${process.env.PUBLIC_URL}/images/colgate.png`,
+      responsibilities: [
+        "Develop and maintain JavaScript-based web applications and internal tools to support business and engineering workflows across cross-functional teams.",
+        "Implement frontend features using modern JavaScript frameworks, integrating RESTful APIs to display and manage data efficiently within internal platforms.",
+        "Collaborate with designers, product managers, and backend engineers to translate requirements into scalable, maintainable software solutions, emphasizing code quality and usability."
+      ]
+    },
+    {
+      id: 2,
       position: "Software Engineer Intern",
       company: "Bank of America",
       location: "New York, NY",
@@ -40,11 +69,11 @@ export const portfolioData = {
       ]
     },
     {
-      id: 2,
+      id: 3,
       position: "Student Researcher",
       company: "Cornell University",
       location: "Ithaca, NY",
-      dates: "June 2024 - Present",
+      dates: "June 2024 - July 2024",
       logo: `${process.env.PUBLIC_URL}/images/cornell.png`,
       responsibilities: [
         "Explored the existing constraints of multimodal AI LLaVA (7B parameter model) in text and image-to-text capabilities to use as benchmarks and implemented methods to circumvent them for applications of citizen science and aiding the visually impaired.",
@@ -54,7 +83,7 @@ export const portfolioData = {
       ]
     },
     {
-      id: 3,
+      id: 4,
       position: "Mathematics Tutor",
       company: "New Jersey Institute of Technology",
       location: "Newark, NJ",

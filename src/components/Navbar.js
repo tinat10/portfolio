@@ -1,83 +1,122 @@
-import React, { useState, useEffect } from 'react';
-import { FaLinkedin, FaGithub, FaBars, FaTimes } from 'react-icons/fa';
+import React, { useMemo, useState, useRef, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { FaChevronDown, FaChevronLeft, FaChevronRight, FaGithub, FaLinkedin } from 'react-icons/fa';
 import './styles/Navbar.css';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      
-      // Update active section based on scroll position
-      const sections = ['home', 'education', 'experience', 'profdev', 'projects', 'volunteer', 'certifications'];
-      const scrollPosition = window.scrollY + 100;
+  const pages = useMemo(
+    () => [
+      { path: '/', label: 'home' },
+      { path: '/about', label: 'about me' },
+      { path: '/portfolio', label: 'extra work' },
+    ],
+    []
+  );
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
-        }
-      }
-    };
+  const activePath = location.pathname || '/';
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsMobileMenuOpen(false);
-    }
+  const goTo = (path) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="nav-container">
-        <div className="nav-logo" onClick={() => scrollToSection('home')}>
-          <span>Tina Thai</span>
-        </div>
-        
-        <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className={activeSection === 'home' ? 'active' : ''}>
-            Home
-          </a>
-          <a href="#education" onClick={(e) => { e.preventDefault(); scrollToSection('education'); }} className={activeSection === 'education' ? 'active' : ''}>
-            Education
-          </a>
-          <a href="#experience" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }} className={activeSection === 'experience' ? 'active' : ''}>
-            Experience
-          </a>
-          <a href="#profdev" onClick={(e) => { e.preventDefault(); scrollToSection('profdev'); }} className={activeSection === 'profdev' ? 'active' : ''}>
-            Development
-          </a>
-          <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className={activeSection === 'projects' ? 'active' : ''}>
-            Projects
-          </a>
-          <a href="#volunteer" onClick={(e) => { e.preventDefault(); scrollToSection('volunteer'); }} className={activeSection === 'volunteer' ? 'active' : ''}>
-            Volunteer
-          </a>
-          <a href="#certifications" onClick={(e) => { e.preventDefault(); scrollToSection('certifications'); }} className={activeSection === 'certifications' ? 'active' : ''}>
-            Certifications
-          </a>
-        </div>
+  const movePage = (direction) => {
+    const idx = pages.findIndex((p) => p.path === activePath);
+    const safeIdx = idx === -1 ? 0 : idx;
+    let nextIdx = safeIdx + direction;
+    if (nextIdx < 0) nextIdx = pages.length - 1;
+    if (nextIdx >= pages.length) nextIdx = 0;
+    const next = pages[nextIdx];
+    if (next) goTo(next.path);
+  };
 
-        <div className="nav-social">
-          <a href="https://www.linkedin.com/in/thaitina/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+  const activeLabel = pages.find((p) => p.path === activePath)?.label ?? 'home';
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  return (
+    <nav className="navbar scrolled">
+      <div className="nav-container">
+        <button className="topbar-brand" type="button" onClick={() => goTo('/')} aria-label="Go to home">
+          <span className="brand-mark" aria-hidden="true">
+            <span className="brand-dot" />
+          </span>
+          <span className="brand-text">
+            <span className="brand-name">Tina Thai</span>
+            <span className="brand-subtitle">Computer Science Student</span>
+          </span>
+        </button>
+
+        <div className="now-playing">
+          <div className="now-playing-left" ref={dropdownRef}>
+            <span className="now-playing-label">Now Playing</span>
+            <div className="nav-dropdown">
+              <button
+                type="button"
+                className="nav-dropdown-trigger"
+                onClick={() => setDropdownOpen((o) => !o)}
+                aria-expanded={dropdownOpen}
+                aria-haspopup="listbox"
+                aria-label="Jump to page"
+              >
+                <span className="nav-dropdown-value">{activeLabel}</span>
+                <FaChevronDown className={`nav-dropdown-chevron ${dropdownOpen ? 'nav-dropdown-chevron--open' : ''}`} aria-hidden />
+              </button>
+              {dropdownOpen && (
+                <ul
+                  className="nav-dropdown-menu"
+                  role="listbox"
+                  aria-label="Page navigation"
+                >
+                  {pages.map((p) => (
+                    <li key={p.path} role="option" aria-selected={p.path === activePath}>
+                      <button
+                        type="button"
+                        className={`nav-dropdown-item ${p.path === activePath ? 'nav-dropdown-item--active' : ''}`}
+                        onClick={() => {
+                          goTo(p.path);
+                          setDropdownOpen(false);
+                        }}
+                      >
+                        {p.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+
+          <div className="now-playing-controls" aria-label="Page navigation controls">
+            <button type="button" className="now-btn" onClick={() => movePage(-1)} aria-label="Previous page">
+              <FaChevronLeft />
+            </button>
+            <button type="button" className="now-btn" onClick={() => movePage(1)} aria-label="Next page">
+              <FaChevronRight />
+            </button>
+          </div>
+
+          <div className="now-playing-social" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/thaitina/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <FaLinkedin />
           </a>
           <a href="https://github.com/tinat10" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub />
           </a>
         </div>
-
-        <div className="nav-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </div>
     </nav>

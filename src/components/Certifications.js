@@ -1,63 +1,43 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { FaCertificate } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolioData';
+import WorksListSection, { extractYear } from './WorksListSection';
 import './styles/Certifications.css';
 
 const Certifications = () => {
   return (
-    <section id="certifications" className="certifications-section">
-      <motion.div
-        className="container"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="sparkle-decoration">✨</div>
-        <h2 className="section-title">Certifications</h2>
-        <div className="certifications-grid">
-          {portfolioData.certifications.map((cert, index) => (
-            <motion.div
-              key={cert.id}
-              className="certification-card"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}
-            >
-              <div className="cert-icon">
-                <FaCertificate />
-              </div>
-              <div className="cert-logo">
-                <img src={cert.logo} alt={`${cert.issuer} Logo`} />
-              </div>
-              <div className="cert-content">
-                <h3 className="cert-title">{cert.title}</h3>
-                <p className="cert-issuer">{cert.issuer}</p>
-                <p className="cert-date">Completed: {cert.date}</p>
-                <ul className="cert-description">
-                  {cert.description.map((desc, idx) => (
-                    <li key={idx}>{desc}</li>
-                  ))}
-                </ul>
-                {cert.link && (
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cert-link"
-                  >
-                    View Certificate
-                  </a>
-                )}
-              </div>
-            </motion.div>
-          ))}
+    <WorksListSection
+      id="certifications"
+      title="certifications"
+      columns={{ title: 'TITLE', type: 'TYPE', year: 'YEAR' }}
+      rows={portfolioData.certifications}
+      getRowKey={(c) => c.id}
+      getRowTitle={(c) => c.title}
+      getRowType={(c) => c.issuer}
+      getRowYear={(c) => extractYear(c.date)}
+      renderTitleLeading={(c) => <img src={c.logo} alt="" />}
+      renderModal={(c) => (
+        <div className="cert-modal">
+          <div className="cert-meta">
+            <div className="cert-metaLine">
+              <span className="cert-metaStrong">{c.issuer}</span>
+              <span className="cert-metaMuted"> · {c.date}</span>
+            </div>
+          </div>
+          <ul className="cert-modalList">
+            {(c.description || []).map((d, idx) => (
+              <li key={idx}>{d}</li>
+            ))}
+          </ul>
+          <div className="cert-modalLinks">
+            {c.link && (
+              <a className="cert-modalLink" href={c.link} target="_blank" rel="noopener noreferrer">
+                View certificate
+              </a>
+            )}
+          </div>
         </div>
-      </motion.div>
-    </section>
+      )}
+    />
   );
 };
 

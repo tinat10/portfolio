@@ -1,7 +1,11 @@
 /* App Styles */
 .App {
   min-height: 100vh;
-  background-color: #f5f7fa;
+  background-color: var(--bg-main);
+}
+
+.app-main {
+  min-height: 70vh;
 }
 
 /* Smooth transitions for all sections */

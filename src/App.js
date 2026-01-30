@@ -1,28 +1,27 @@
 import React from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Education from './components/Education';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import ProfessionalDev from './components/ProfessionalDev';
-import Volunteer from './components/Volunteer';
-import Certifications from './components/Certifications';
-import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import ContactButton from './components/ContactButton';
+import AboutPage from './pages/AboutPage';
+import HomePage from './pages/HomePage';
+import ProjectsPage from './pages/ProjectsPage';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Hero />
-      <Education />
-      <Experience />
-      <ProfessionalDev />
-      <Projects />
-      <Volunteer />
-      <Certifications />
-      <ContactForm />
+      <ContactButton />
+      <main className="app-main">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/portfolio" element={<ProjectsPage />} />
+          <Route path="/projects" element={<Navigate to="/portfolio" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   );
