@@ -90,7 +90,14 @@ const Hero = () => {
             >
               <span className="cover-know-me-text">
                 get to know me
-                <FaArrowRight className="cover-know-me-arrow" aria-hidden />
+                <motion.span
+                  className="cover-know-me-arrow"
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+                  aria-hidden
+                >
+                  <FaArrowRight />
+                </motion.span>
               </span>
               <span className="cover-know-me-hint">(click here to look at my CS experience!)</span>
             </motion.button>

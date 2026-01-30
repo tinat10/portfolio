@@ -194,6 +194,20 @@ export const portfolioData = {
   volunteer: [
     {
       id: 1,
+      position: "Historian",
+      company: "Vietnamese Student Association",
+      location: "Newark, NJ",
+      dates: "September 2024 – Present",
+      logo: `${process.env.PUBLIC_URL}/images/vsa.jpg`,
+      responsibilities: [
+        "Document and preserve organizational history by capturing and curating photos, videos, and written highlights from cultural events, meetings, and community initiatives.",
+        "Manage and organize digital media archives to support marketing, social media, and future event promotions, ensuring consistency with the organization’s branding and mission.",
+        "Collaborate with the executive board and event coordinators to highlight member engagement and cultural programming, strengthening community presence and outreach."
+      ]
+    },
+    
+    {
+      id: 2,
       position: "Public Relations Chair, Women in Computing Society",
       company: "New Jersey Institute of Technology",
       location: "Newark, NJ",
@@ -206,7 +220,7 @@ export const portfolioData = {
       ]
     },
     {
-      id: 2,
+      id: 3,
       position: "Volunteer, Knit N' Crochet Club",
       company: "New Jersey Institute of Technology",
       location: "Newark, NJ",
@@ -219,7 +233,7 @@ export const portfolioData = {
       ]
     },
     {
-      id: 3,
+      id: 4,
       position: "President, Girls Who Code (GWC)",
       company: "",
       location: "",
