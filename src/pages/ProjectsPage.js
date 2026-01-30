@@ -10,7 +10,7 @@ export default function ProjectsPage() {
     <div className="page">
       <div className="page-section projects-page">
         <header className="portfolio-header">
-          <h1 className="portfolio-title">portfolio</h1>
+          <h1 className="portfolio-title">extra work</h1>
           <p className="portfolio-blurb">
             This is everything about me that I do in my free time involving CS!
           </p>

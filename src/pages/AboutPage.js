@@ -13,7 +13,7 @@ export default function AboutPage() {
     <div className="page">
       <div className="page-section about-page">
         <header className="about-header">
-          <h1 className="about-title">about</h1>
+          <h1 className="about-title">about me</h1>
           <p className="about-subtitle">
             Education, experience, and everything I&apos;m building toward.
           </p>

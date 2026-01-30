@@ -12,8 +12,8 @@ const Navbar = () => {
   const pages = useMemo(
     () => [
       { path: '/', label: 'Home' },
-      { path: '/about', label: 'About' },
-      { path: '/portfolio', label: 'Portfolio' },
+      { path: '/about', label: 'About me' },
+      { path: '/portfolio', label: 'Extra work' },
     ],
     []
   );
