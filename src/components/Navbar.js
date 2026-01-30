@@ -11,9 +11,9 @@ const Navbar = () => {
 
   const pages = useMemo(
     () => [
-      { path: '/', label: 'Home' },
-      { path: '/about', label: 'About me' },
-      { path: '/portfolio', label: 'Extra work' },
+      { path: '/', label: 'home' },
+      { path: '/about', label: 'about me' },
+      { path: '/portfolio', label: 'extra work' },
     ],
     []
   );
@@ -35,7 +35,7 @@ const Navbar = () => {
     if (next) goTo(next.path);
   };
 
-  const activeLabel = pages.find((p) => p.path === activePath)?.label ?? 'Home';
+  const activeLabel = pages.find((p) => p.path === activePath)?.label ?? 'home';
 
   useEffect(() => {
     const handleClickOutside = (e) => {
