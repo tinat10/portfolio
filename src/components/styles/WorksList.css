@@ -1,13 +1,13 @@
 .works-section {
-  padding: 5.5rem 0;
+  padding: 2.5rem 0 4rem;
   background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-alt) 100%);
   position: relative;
 }
 
 .works-header {
   display: grid;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .works-title {

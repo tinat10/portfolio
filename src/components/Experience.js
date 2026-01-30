@@ -8,6 +8,7 @@ const Experience = () => {
     <WorksListSection
       id="experience"
       title="work"
+      subtleAnimation
       columns={{ title: 'TITLE', type: 'TYPE', year: 'YEAR' }}
       rows={portfolioData.experience}
       getRowKey={(exp) => exp.id}

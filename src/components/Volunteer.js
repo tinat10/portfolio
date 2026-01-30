@@ -7,7 +7,7 @@ const Volunteer = () => {
   return (
     <WorksListSection
       id="volunteer"
-      title="volunteer"
+      title="volunteer work"
       columns={{ title: 'TITLE', type: 'TYPE', year: 'YEAR' }}
       rows={portfolioData.volunteer}
       getRowKey={(v) => v.id}

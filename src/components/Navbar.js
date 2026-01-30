@@ -1,21 +1,19 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { FaChevronLeft, FaChevronRight, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaChevronDown, FaChevronLeft, FaChevronRight, FaGithub, FaLinkedin } from 'react-icons/fa';
 import './styles/Navbar.css';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const pages = useMemo(
     () => [
       { path: '/', label: 'Home' },
-      { path: '/education', label: 'Education' },
-      { path: '/work', label: 'Work' },
-      { path: '/development', label: 'Development' },
-      { path: '/projects', label: 'Projects' },
-      { path: '/volunteer', label: 'Volunteer' },
-      { path: '/certifications', label: 'Certifications' },
+      { path: '/about', label: 'About' },
+      { path: '/portfolio', label: 'Portfolio' },
     ],
     []
   );
@@ -30,10 +28,24 @@ const Navbar = () => {
   const movePage = (direction) => {
     const idx = pages.findIndex((p) => p.path === activePath);
     const safeIdx = idx === -1 ? 0 : idx;
-    const nextIdx = Math.min(pages.length - 1, Math.max(0, safeIdx + direction));
+    let nextIdx = safeIdx + direction;
+    if (nextIdx < 0) nextIdx = pages.length - 1;
+    if (nextIdx >= pages.length) nextIdx = 0;
     const next = pages[nextIdx];
     if (next) goTo(next.path);
   };
+
+  const activeLabel = pages.find((p) => p.path === activePath)?.label ?? 'Home';
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <nav className="navbar scrolled">
@@ -49,20 +61,43 @@ const Navbar = () => {
         </button>
 
         <div className="now-playing">
-          <div className="now-playing-left">
+          <div className="now-playing-left" ref={dropdownRef}>
             <span className="now-playing-label">Now Playing</span>
-            <select
-              className="now-playing-select"
-              value={activePath}
-              onChange={(e) => goTo(e.target.value)}
-              aria-label="Jump to page"
-            >
-              {pages.map((p) => (
-                <option key={p.path} value={p.path}>
-                  {p.label}
-                </option>
-              ))}
-            </select>
+            <div className="nav-dropdown">
+              <button
+                type="button"
+                className="nav-dropdown-trigger"
+                onClick={() => setDropdownOpen((o) => !o)}
+                aria-expanded={dropdownOpen}
+                aria-haspopup="listbox"
+                aria-label="Jump to page"
+              >
+                <span className="nav-dropdown-value">{activeLabel}</span>
+                <FaChevronDown className={`nav-dropdown-chevron ${dropdownOpen ? 'nav-dropdown-chevron--open' : ''}`} aria-hidden />
+              </button>
+              {dropdownOpen && (
+                <ul
+                  className="nav-dropdown-menu"
+                  role="listbox"
+                  aria-label="Page navigation"
+                >
+                  {pages.map((p) => (
+                    <li key={p.path} role="option" aria-selected={p.path === activePath}>
+                      <button
+                        type="button"
+                        className={`nav-dropdown-item ${p.path === activePath ? 'nav-dropdown-item--active' : ''}`}
+                        onClick={() => {
+                          goTo(p.path);
+                          setDropdownOpen(false);
+                        }}
+                      >
+                        {p.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
 
           <div className="now-playing-controls" aria-label="Page navigation controls">

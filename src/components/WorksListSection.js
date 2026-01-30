@@ -23,6 +23,7 @@ export default function WorksListSection({
   getRowYear,
   renderTitleLeading,
   renderModal,
+  subtleAnimation = false,
 }) {
   const [activeKey, setActiveKey] = useState(null);
 
@@ -35,10 +36,10 @@ export default function WorksListSection({
     <section id={id} className="works-section">
       <motion.div
         className="container"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-120px' }}
-        transition={{ duration: 0.55 }}
+        initial={subtleAnimation ? { opacity: 0.7 } : { opacity: 0, y: 40 }}
+        whileInView={subtleAnimation ? { opacity: 1 } : { opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: subtleAnimation ? '-80px' : '-120px' }}
+        transition={{ duration: subtleAnimation ? 0.3 : 0.55 }}
       >
         <div className="works-header">
           <h2 className="works-title">{title}</h2>
@@ -70,10 +71,10 @@ export default function WorksListSection({
                 type="button"
                 className="works-row works-row--button"
                 role="row"
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-120px' }}
-                transition={{ duration: 0.35, delay: idx * 0.03 }}
+                initial={subtleAnimation ? { opacity: 0.85 } : { opacity: 0, y: 12 }}
+                whileInView={subtleAnimation ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: subtleAnimation ? '-80px' : '-120px' }}
+                transition={{ duration: subtleAnimation ? 0.25 : 0.35, delay: idx * (subtleAnimation ? 0.02 : 0.03) }}
                 onClick={() => setActiveKey(String(key))}
                 aria-label={`Open details for ${rowTitle}`}
               >
