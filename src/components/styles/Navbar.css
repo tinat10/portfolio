@@ -88,6 +88,7 @@
 }
 
 .now-playing-left {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.85rem;
@@ -96,8 +97,8 @@
   width: 240px;
   border-radius: 14px;
   border: 1px solid var(--border-soft);
-  background: rgba(255, 250, 245, 0.78);
-  box-shadow: 0 10px 24px rgba(75, 59, 48, 0.08);
+  background: rgba(255, 252, 249, 0.78);
+  box-shadow: 0 10px 24px rgba(70, 85, 91, 0.08);
 }
 
 .now-playing-label {
@@ -111,7 +112,6 @@
 .nav-dropdown {
   flex: 1;
   min-width: 120px;
-  position: relative;
 }
 
 .nav-dropdown-trigger {
@@ -157,12 +157,13 @@
   color: var(--emphasis);
 }
 
+/* Anchored to .now-playing-left so the panel drops full-width under the pill */
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: calc(100% + 0.45rem);
   left: 0;
   right: 0;
-  min-width: 160px;
+  width: 100%;
   margin: 0;
   padding: 0.4rem;
   list-style: none;
@@ -170,7 +171,7 @@
   background: var(--bg-card);
   border: 1px solid var(--border-soft);
   border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(75, 59, 48, 0.14);
+  box-shadow: 0 12px 32px rgba(70, 85, 91, 0.14);
   z-index: 1100;
 }
 

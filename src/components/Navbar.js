@@ -70,34 +70,36 @@ const Navbar = () => {
                 onClick={() => setDropdownOpen((o) => !o)}
                 aria-expanded={dropdownOpen}
                 aria-haspopup="listbox"
+                aria-controls="nav-page-menu"
                 aria-label="Jump to page"
               >
                 <span className="nav-dropdown-value">{activeLabel}</span>
                 <FaChevronDown className={`nav-dropdown-chevron ${dropdownOpen ? 'nav-dropdown-chevron--open' : ''}`} aria-hidden />
               </button>
-              {dropdownOpen && (
-                <ul
-                  className="nav-dropdown-menu"
-                  role="listbox"
-                  aria-label="Page navigation"
-                >
-                  {pages.map((p) => (
-                    <li key={p.path} role="option" aria-selected={p.path === activePath}>
-                      <button
-                        type="button"
-                        className={`nav-dropdown-item ${p.path === activePath ? 'nav-dropdown-item--active' : ''}`}
-                        onClick={() => {
-                          goTo(p.path);
-                          setDropdownOpen(false);
-                        }}
-                      >
-                        {p.label}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
             </div>
+            {dropdownOpen && (
+              <ul
+                id="nav-page-menu"
+                className="nav-dropdown-menu"
+                role="listbox"
+                aria-label="Page navigation"
+              >
+                {pages.map((p) => (
+                  <li key={p.path} role="option" aria-selected={p.path === activePath}>
+                    <button
+                      type="button"
+                      className={`nav-dropdown-item ${p.path === activePath ? 'nav-dropdown-item--active' : ''}`}
+                      onClick={() => {
+                        goTo(p.path);
+                        setDropdownOpen(false);
+                      }}
+                    >
+                      {p.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <div className="now-playing-controls" aria-label="Page navigation controls">
