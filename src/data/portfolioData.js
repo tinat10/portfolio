@@ -43,6 +43,15 @@ export const portfolioData = {
   },
   experience: [
     {
+      id: 5,
+      position: "Data Engineer",
+      company: "Bloomberg",
+      location: "New York, NY",
+      dates: "June 2026 – Present",
+      logo: `${process.env.PUBLIC_URL}/images/bloomberg.jpeg`,
+      responsibilities: ["Incoming"]
+    },
+    {
       id: 1,
       position: "Software Engineer Intern",
       company: "Colgate-Palmolive",
@@ -87,7 +96,7 @@ export const portfolioData = {
       position: "Mathematics Tutor",
       company: "New Jersey Institute of Technology",
       location: "Newark, NJ",
-      dates: "Jan. 2024 - Present",
+      dates: "Jan. 2024 - Jan. 2026",
       logo: `${process.env.PUBLIC_URL}/images/njit_logo_1.png`,
       responsibilities: [
         "Tutor over 200 students across 4 high-demand STEM courses (statistics, linear algebra, and calculus I & II), assessing pre- and post-session metrics demonstrating an average 25% gain in core competencies through individualized review of fundamental principles",
