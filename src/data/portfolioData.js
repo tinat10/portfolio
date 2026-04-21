@@ -11,15 +11,16 @@ export const portfolioData = {
       "knitting & crochet",
       "exploring new Thai restaurants in nyc",
       "sunset photography",
-      "iced coffee (w/ caramel pleaseee) enthusiast",
-      "traveling to new places!"
+      "traveling to new places!",
+      "scrapbooking and junk journaling",
+      "cooking steak :)))"
     ],
     randomFacts: [
       "i can speak Vietnamese, but I am illiterate :/",
-      "i've crocheted over 50 items for charity",
+      "have crocheted over 50 items for charity",
       "i loveee doing my own nails (but I'm not good at it)",
-      "my go-to study snack are plantain chips",
-      "i love scrapbooking and junk journaling"
+      "proud iced coffee (w/ caramel pleaseee) enthusiast",
+      "my go-to study snack are plantain chips"
     ]
   },
   education: {
