@@ -11,8 +11,8 @@
   padding: 1rem 0.75rem;
   border: none;
   border-radius: 14px 0 0 14px;
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  color: white;
+  background: var(--emphasis);
+  color: #fff;
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 0.95rem;
   font-weight: 700;
@@ -23,7 +23,8 @@
 }
 
 .contact-float:hover {
-  box-shadow: -6px 6px 28px rgba(75, 59, 48, 0.22);
+  background: var(--emphasis-hover);
+  box-shadow: -6px 6px 28px rgba(62, 75, 82, 0.28);
   transform: translateY(-50%) translateX(-4px);
 }
 

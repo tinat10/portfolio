@@ -147,7 +147,7 @@
   padding: 0;
   border: none;
   background: transparent;
-  color: var(--accent-1);
+  color: var(--emphasis);
   font-family: 'Nunito', sans-serif;
   cursor: pointer;
   text-align: left;
@@ -155,7 +155,7 @@
 }
 
 .cover-know-me:hover {
-  color: var(--accent-2);
+  color: var(--emphasis-hover);
 }
 
 .cover-know-me-text {
@@ -164,13 +164,13 @@
   gap: 0.5rem;
   font-size: 1.1rem;
   font-weight: 800;
-  border-bottom: 2px solid var(--accent-1);
+  border-bottom: 2px solid var(--emphasis);
   padding-bottom: 0.2rem;
   transition: all 0.2s ease;
 }
 
 .cover-know-me:hover .cover-know-me-text {
-  border-color: var(--accent-2);
+  border-color: var(--emphasis-hover);
 }
 
 .cover-know-me-arrow {

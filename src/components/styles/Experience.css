@@ -156,12 +156,12 @@
 .experience-card-cta {
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--accent-1);
+  color: var(--emphasis);
   transition: color 0.2s ease;
 }
 
 .experience-card:hover .experience-card-cta {
-  color: var(--accent-2);
+  color: var(--emphasis-hover);
 }
 
 /* Modal content */

@@ -9,6 +9,9 @@
   --accent-3: #7c8c7a; /* sage */
   --text-main: #4b3b30; /* warm brown */
   --text-muted: #7b6a5a;
+  /* High-emphasis CTAs / key actions (not page titles) */
+  --emphasis: #4f5a62;
+  --emphasis-hover: #3e4b52;
   --border-soft: #ecd7c5;
   --shadow-soft: 0 10px 30px rgba(75, 59, 48, 0.08);
 }
