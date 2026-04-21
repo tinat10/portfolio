@@ -131,6 +131,59 @@ const Hero = () => {
           </motion.div>
         </div>
 
+        <div className="cover-featured-wrap">
+          {(canPrev || canNext) && (
+            <>
+              <button
+                type="button"
+                className="cover-photo-btn cover-photo-prev"
+                onClick={() => setPhotoIndex((i) => i - 1)}
+                disabled={!canPrev}
+                aria-label="Previous photos"
+              >
+                <FaChevronLeft />
+              </button>
+              <button
+                type="button"
+                className="cover-photo-btn cover-photo-next"
+                onClick={() => setPhotoIndex((i) => i + 1)}
+                disabled={!canNext}
+                aria-label="Next photos"
+              >
+                <FaChevronRight />
+              </button>
+            </>
+          )}
+          <div className="cover-featured">
+            {visiblePhotos.map((src, idx) => (
+              <motion.div
+                key={`${photoIndex}-${idx}`}
+                className="home-image-tile"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+              >
+                <div className="home-image-cover">
+                  {failedImages.has(src) ? (
+                    <div className="home-image-placeholder" aria-hidden="true">
+                      <span>Photo unavailable</span>
+                    </div>
+                  ) : (
+                    <img
+                      className="home-image"
+                      src={src}
+                      alt={`Snapshot ${idx + 1}`}
+                      onError={() => onImageError(src)}
+                    />
+                  )}
+                  <div className="home-image-sheen" aria-hidden="true" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
         <motion.div
           className="cover-personality"
           initial={{ opacity: 0, y: 24 }}
@@ -196,59 +249,6 @@ const Hero = () => {
             </motion.div>
           </div>
         </motion.div>
-
-        <div className="cover-featured-wrap">
-          {(canPrev || canNext) && (
-            <>
-              <button
-                type="button"
-                className="cover-photo-btn cover-photo-prev"
-                onClick={() => setPhotoIndex((i) => i - 1)}
-                disabled={!canPrev}
-                aria-label="Previous photos"
-              >
-                <FaChevronLeft />
-              </button>
-              <button
-                type="button"
-                className="cover-photo-btn cover-photo-next"
-                onClick={() => setPhotoIndex((i) => i + 1)}
-                disabled={!canNext}
-                aria-label="Next photos"
-              >
-                <FaChevronRight />
-              </button>
-            </>
-          )}
-          <div className="cover-featured">
-            {visiblePhotos.map((src, idx) => (
-              <motion.div
-                key={`${photoIndex}-${idx}`}
-                className="home-image-tile"
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-              >
-                <div className="home-image-cover">
-                  {failedImages.has(src) ? (
-                    <div className="home-image-placeholder" aria-hidden="true">
-                      <span>Photo unavailable</span>
-                    </div>
-                  ) : (
-                    <img
-                      className="home-image"
-                      src={src}
-                      alt={`Snapshot ${idx + 1}`}
-                      onError={() => onImageError(src)}
-                    />
-                  )}
-                  <div className="home-image-sheen" aria-hidden="true" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </div>
 
       <motion.button

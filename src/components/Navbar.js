@@ -62,7 +62,7 @@ const Navbar = () => {
 
         <div className="now-playing">
           <div className="now-playing-left" ref={dropdownRef}>
-            <span className="now-playing-label">Now Playing</span>
+            <span className="now-playing-label">Now Playing:</span>
             <div className="nav-dropdown">
               <button
                 type="button"

@@ -206,10 +206,11 @@
   gap: 2.25rem;
 }
 
-/* Photo carousel wrapper */
+/* Photo carousel wrapper (directly under intro grid + tags) */
 .cover-featured-wrap {
   position: relative;
-  margin-top: 3.25rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -311,7 +312,7 @@
 
 /* Personality section */
 .cover-personality {
-  margin-top: 3.5rem;
+  margin-top: 2.25rem;
   padding-top: 2.5rem;
   border-top: 1px solid rgba(75, 59, 48, 0.16);
 }
