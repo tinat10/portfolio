@@ -57,7 +57,7 @@ const Navbar = () => {
           </span>
           <span className="brand-text">
             <span className="brand-name">Tina Thai</span>
-            <span className="brand-subtitle">Computer Science Student</span>
+            <span className="brand-subtitle">B.S. in Computer Science</span>
           </span>
         </button>
 
