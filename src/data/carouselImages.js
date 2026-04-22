@@ -2,7 +2,9 @@
 // Add/remove images in public/images/carousel - then run npm start or npm run build
 
 export const carouselImages = [
+  `${process.env.PUBLIC_URL || ''}/images/carousel/library_flix.jpeg`,
   `${process.env.PUBLIC_URL || ''}/images/carousel/taiwan.jpg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/tteok.jpeg`,
   `${process.env.PUBLIC_URL || ''}/images/carousel/home1.jpg`,
   `${process.env.PUBLIC_URL || ''}/images/carousel/home2.jpg`,
   `${process.env.PUBLIC_URL || ''}/images/carousel/home4.jpg`,
@@ -24,5 +26,17 @@ export const carouselImages = [
   `${process.env.PUBLIC_URL || ''}/images/carousel/IMG_5543.jpg`,
   `${process.env.PUBLIC_URL || ''}/images/carousel/IMG_7266.jpg`,
   `${process.env.PUBLIC_URL || ''}/images/carousel/IMG_7540.jpg`,
-  `${process.env.PUBLIC_URL || ''}/images/carousel/20260107_190549_0E62A2.JPEG`
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260107_190549_0E62A2.JPEG`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_01196B.jpeg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_01F2BE.jpeg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_037DE0.jpeg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_0386F2.jpeg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_04D59C.jpeg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_04F00C.jpeg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_04FC94.jpeg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_0591DB.jpeg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_0647E8.jpeg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_076AEB.jpeg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_08AC51.jpeg`,
+  `${process.env.PUBLIC_URL || ''}/images/carousel/20260421_225419_0FDF46.jpeg`
 ];
