@@ -63,21 +63,21 @@ const Navbar = () => {
 
         <div className="now-playing">
           <div className="now-playing-left" ref={dropdownRef}>
-            <span className="now-playing-label">Now Playing:</span>
-            <div className="nav-dropdown">
-              <button
-                type="button"
-                className="nav-dropdown-trigger"
-                onClick={() => setDropdownOpen((o) => !o)}
-                aria-expanded={dropdownOpen}
-                aria-haspopup="listbox"
-                aria-controls="nav-page-menu"
-                aria-label="Jump to page"
-              >
+            <button
+              type="button"
+              className="now-playing-trigger"
+              onClick={() => setDropdownOpen((o) => !o)}
+              aria-expanded={dropdownOpen}
+              aria-haspopup="listbox"
+              aria-controls="nav-page-menu"
+              aria-label="Jump to page"
+            >
+              <span className="now-playing-label">Now Playing:</span>
+              <span className="nav-dropdown">
                 <span className="nav-dropdown-value">{activeLabel}</span>
                 <FaChevronDown className={`nav-dropdown-chevron ${dropdownOpen ? 'nav-dropdown-chevron--open' : ''}`} aria-hidden />
-              </button>
-            </div>
+              </span>
+            </button>
             {dropdownOpen && (
               <ul
                 id="nav-page-menu"
