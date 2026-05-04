@@ -2,8 +2,7 @@ export const portfolioData = {
   personal: {
     name: "Tina Thai",
     title: "software engineer & food lover",
-    bio: "welcome to my portfolio! i hope you are able to get to know me better here :) i graduated in may '26 from njit with a B.S. in computer science. i am super interested in software engineering and anything data! i also love tech, finance, and the startup world! besides working at my 9-5, my 5-9 entails lots of cooking, traveling, and junk journaling! feel free to roam around (check out my photo gallery!), and hit me up if you ever want to chat or grab food together!",
-    // bio: "Welcome to my portfolio! I am a passionate <strong>computer science</strong> <strong>student</strong> with a keen interest in <strong>software engineering</strong>, <strong>data analytics</strong>, <strong>data science</strong>, and <strong>research</strong>. My journey in the tech world is driven by a desire to create <strong>innovative software solutions</strong>, uncover <strong>insights from data</strong>, and contribute to <strong>groundbreaking research</strong>. Explore my work and feel free to reach out for collaborations or inquiries.",
+    bio: "welcome to my portfolio! i hope this gives you a better sense of who i am. i graduated from NJIT in May 2026 with a B.S. in Computer Science. i’m especially interested in software engineering, data, finance, and the startup world. outside of my 9–5, my 5–9 usually involves cooking, traveling, and junk journaling. feel free to roam around, check out my photo gallery, and reach out if you ever want to chat or grab food!",
     email: "tkt@njit.edu",
     personalEmail: "tinathai05@gmail.com",
     linkedin: "https://www.linkedin.com/in/thaitina/",
