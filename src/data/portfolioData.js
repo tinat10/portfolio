@@ -44,13 +44,22 @@ export const portfolioData = {
   },
   experience: [
     {
+      id: 6,
+      position: "Incoming Software Engineer",
+      company: "Airbnb",
+      location: "San Francisco, CA",
+      dates: "Start date TBD",
+      logo: `${process.env.PUBLIC_URL}/images/tt.ico`,
+      responsibilities: ["Incoming Software Engineer at Airbnb."]
+    },
+    {
       id: 5,
       position: "Data Engineer",
       company: "Bloomberg",
       location: "New York, NY",
-      dates: "June 2026 – Present",
+      dates: "June 2026 - Sept 2026",
       logo: `${process.env.PUBLIC_URL}/images/bloomberg.jpeg`,
-      responsibilities: ["Incoming"]
+      responsibilities: ["Completed a data engineering role within Bloomberg's data and analytics systems."]
     },
     {
       id: 1,
