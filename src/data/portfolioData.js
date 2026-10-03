@@ -50,7 +50,7 @@ export const portfolioData = {
       location: "San Francisco, CA",
       dates: "Start date TBD",
       logo: `${process.env.PUBLIC_URL}/images/bnb.jpg`,
-      responsibilities: ["Incomimg!"]
+      responsibilities: ["Incoming!"]
     },
     {
       id: 5,
