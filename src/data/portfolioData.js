@@ -60,7 +60,7 @@ export const portfolioData = {
       dates: "June 2026 - Sept 2026",
       logo: `${process.env.PUBLIC_URL}/images/bloomberg.jpeg`,
       responsibilities: [
-        "Engineered and automated Python-based business logic and data processing pipelines for a private credit team, streamlining data workflows for BDCs (Business Development Companies) managing SEC reporting requirements.",
+        "Engineered and automated Python-based business logic and data processing pipelines within the Private Credit team, streamlining data workflows for BDCs (Business Development Companies) managing SEC reporting requirements.",
         "Developed internal tooling for Data Analysts to automate data cleaning, transformation, and validation across complex private markets portfolios.",
         "Integrated Bloomberg’s proprietary data platform to build robust ETL (Extract, Transform, Load) pipelines, scaling data ingestion for large-scale financial and regulatory datasets."
       ]
