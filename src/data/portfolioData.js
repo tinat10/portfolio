@@ -49,7 +49,7 @@ export const portfolioData = {
       company: "Airbnb",
       location: "San Francisco, CA",
       dates: "Start date TBD",
-      logo: `${process.env.PUBLIC_URL}/images/tt.ico`,
+      logo: `${process.env.PUBLIC_URL}/images/bnb.jpg`,
       responsibilities: ["Incomimg!"]
     },
     {
