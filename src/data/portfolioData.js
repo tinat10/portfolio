@@ -50,7 +50,7 @@ export const portfolioData = {
       location: "San Francisco, CA",
       dates: "Start date TBD",
       logo: `${process.env.PUBLIC_URL}/images/tt.ico`,
-      responsibilities: ["Incoming Software Engineer at Airbnb."]
+      responsibilities: ["Incomimg!"]
     },
     {
       id: 5,
@@ -59,11 +59,15 @@ export const portfolioData = {
       location: "New York, NY",
       dates: "June 2026 - Sept 2026",
       logo: `${process.env.PUBLIC_URL}/images/bloomberg.jpeg`,
-      responsibilities: ["Completed a data engineering role within Bloomberg's data and analytics systems."]
+      responsibilities: [
+        "Engineered and automated Python-based business logic and data processing pipelines for a private credit team, streamlining data workflows for BDCs (Business Development Companies) managing SEC reporting requirements.",
+        "Developed internal tooling for Data Analysts to automate data cleaning, transformation, and validation across complex private markets portfolios.",
+        "Integrated Bloomberg’s proprietary data platform to build robust ETL (Extract, Transform, Load) pipelines, scaling data ingestion for large-scale financial and regulatory datasets."
+      ]
     },
     {
       id: 1,
-      position: "Software Engineer Intern",
+      position: "Software Engineer",
       company: "Colgate-Palmolive",
       location: "Piscataway, NJ",
       dates: "January 2026 – Present",
@@ -76,7 +80,7 @@ export const portfolioData = {
     },
     {
       id: 2,
-      position: "Software Engineer Intern",
+      position: "Software Engineer",
       company: "Bank of America",
       location: "New York, NY",
       dates: "June 2025 - August 2025",
